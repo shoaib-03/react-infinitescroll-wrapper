@@ -36,9 +36,10 @@ const InfiniteScrollWrapper = ({
       }
 
       return observer;
-      // end of useMemo
+      // end of useCallback
     },
     // dependancy
+    // eslint-disable-next-line
     [isRendered, onEnd, intersectionDiv]
   );
 
@@ -56,11 +57,11 @@ const InfiniteScrollWrapper = ({
 
   return (
     <div {...props}>
+      {children}
       <div
         ref={intersectionDiv}
         style={{ width: "100%", height: "2rem" }}
       ></div>
-      {children}
     </div>
   );
 };
