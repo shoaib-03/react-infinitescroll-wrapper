@@ -24,7 +24,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "publish:npm": "NODE_ENV=production && rm -rf dist && mkdir dist && npx babel src/components --out-dir dist --copy-files"
+    "publish:npm": "export NODE_ENV=production && rm -rf dist && mkdir dist && npx babel src/components --out-dir dist --copy-files"
   },
   "eslintConfig": {
     "extends": "react-app"
