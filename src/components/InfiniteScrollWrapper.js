@@ -26,7 +26,7 @@ const InfiniteScrollWrapper = ({
           });
         },
         {
-          rootMargin: `${margin.top} ${margin.right} ${margin.bottom} ${margin.left}`,
+          rootMargin: `${margin.top} ${margin.right} ${margin.bottom} ${margin.top}`,
         }
       );
 
@@ -56,12 +56,11 @@ const InfiniteScrollWrapper = ({
 
   return (
     <div {...props}>
-      {children}
-      {/* Render a div with intersection observer */}
       <div
         ref={intersectionDiv}
         style={{ width: "100%", height: "2rem" }}
       ></div>
+      {children}
     </div>
   );
 };
