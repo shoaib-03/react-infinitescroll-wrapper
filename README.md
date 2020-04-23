@@ -22,12 +22,13 @@ function App() {
   const [numbers, setNumbers] = useState(getArray())
 
   const onEnd = () => {
-    setNumbers(numbers=>[...getArray(),...numbers])
+    setNumbers(numbers=>[...numbers, ...getArray()])
   }
 
   return (
     <div className="App">
       <InfiniteScrollWrapper 
+        className="scroll"
         onEnd={onEnd} 
         hasMore={true} 
         margin={{
@@ -44,4 +45,5 @@ function App() {
     </div>
   );
 }
+
 ```
