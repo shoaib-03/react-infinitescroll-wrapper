@@ -3,17 +3,17 @@ A simple component to wrap around a div for which you want infinite scroll. This
 
 ## Install
 ```
-  npm install --save react-infinite-scroll
+  npm install --save react-infinitescroll-wrapper
 
   or
 
-  yarn add react-infinite-scroll
+  yarn add react-infinitescroll-wrapper
 
 ```
 
 ## Importing
 ```
-  import InfiniteScroll from 'react-infinite-scroll'
+  import InfiniteScroll from 'react-infinitescroll-wrapper'
 ```
 
 ## Usage
