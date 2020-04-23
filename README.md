@@ -1,13 +1,19 @@
 # react-infinite-scroll-wrapper
-A simple component to wrap around a div for which you want infinite scroll. This uses IntersectionObserver API
+A simple component to wrap around a div for which you want infinite scroll. This uses IntersectionObserver API and is written with hooks
 
 ## Install
 ```
-    npm install --save react-infinite-scroll-wrapper
+  npm install --save react-infinite-scroll-wrapper
 
-    or
+  or
 
-    yarn add react-infinite-scroll-wrapper
+  yarn add react-infinite-scroll-wrapper
+
+```
+
+## Importing
+```
+  import InfiniteScrollWrapper from 'react-infinite-scroll-wrapper'
 ```
 
 ## Usage
