@@ -13,19 +13,28 @@ A simple component to wrap around a div for which you want infinite scroll. This
 ## Usage
 ```
 function App() {
-  const [numbers, setNumbers] = useState(getArray());
+  const [numbers, setNumbers] = useState(getArray())
 
   const onEnd = () => {
-    setNumbers(numbers=>[...getArray(),...numbers]);
+    setNumbers(numbers=>[...getArray(),...numbers])
   }
 
   return (
     <div className="App">
-      <InfiniteScroll onEnd={onEnd} hasMore={true} >
+      <InfiniteScrollWrapper 
+        onEnd={onEnd} 
+        hasMore={true} 
+        margin={{
+          top: '0px',
+          left: '0px',
+          right: '0px',
+          bottom: '0px'
+        }}
+      >
         {
           numbers.map(num=><p>{num}</p>)
         }
-      </InfiniteScroll>
+      </InfiniteScrollWrapper>
     </div>
   );
 }
