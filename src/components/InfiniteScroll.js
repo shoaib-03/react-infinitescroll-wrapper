@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef } from "react";
 
-const InfiniteScrollWrapper = ({
+const InfiniteScroll = ({
   children,
   onEnd,
   hasMore,
@@ -66,4 +66,4 @@ const InfiniteScrollWrapper = ({
   );
 };
 
-export default InfiniteScrollWrapper;
+export default InfiniteScroll;

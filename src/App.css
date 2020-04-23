@@ -2,6 +2,6 @@
   text-align: center;
 }
 
-.scroll:nth-child(2n){
-  background-color: #000;
+.scroll p:nth-child(2n){
+  background-color: #f8f8f8;
 }

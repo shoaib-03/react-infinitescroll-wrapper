@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import './App.css';
-import InfiniteScrollWrapper from './components/InfiniteScrollWrapper'
+import InfiniteScroll from './components/InfiniteScroll'
 
 const getArray = () => {
   const arr = new Array(100);
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="App">
-      <InfiniteScrollWrapper 
+      <InfiniteScroll 
         className="scroll"
         onEnd={onEnd} 
         hasMore={true} 
@@ -33,7 +33,7 @@ function App() {
         {
           numbers.map(num=><p>{num}</p>)
         }
-      </InfiniteScrollWrapper>
+      </InfiniteScroll>
     </div>
   );
 }

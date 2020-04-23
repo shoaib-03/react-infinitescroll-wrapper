@@ -1,5 +1,5 @@
 {
-  "name": "react-infinite-scroll-wrapper",
+  "name": "react-infinite-scroll",
   "description": "A wrapper component that helps you add infinite scroll to a div",
   "version": "0.1.0",
   "private": false,
