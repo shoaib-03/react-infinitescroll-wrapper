@@ -22,7 +22,6 @@ const InfiniteScroll = ({
         (entries, observer) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting && isRendered.current && hasMore) {
-              console.log('Intersecting')
               next();
             }
           });
