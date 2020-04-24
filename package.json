@@ -1,11 +1,12 @@
 {
   "name": "react-infinitescroll-wrapper",
   "description": "A wrapper component that helps you add infinite scroll to a div",
-  "version": "0.1.0",
+  "version": "0.1.11",
+  "keywords": ["react","infinite-scroll", "react-infinitescroll"],
   "private": false,
   "license": "MIT",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "dist/InfiniteScroll.js",
+  "module": "dist/InfiniteScroll.js",
   "babel": {
     "presets": [
       "@babel/react"
