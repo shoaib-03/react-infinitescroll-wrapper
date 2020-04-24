@@ -13,7 +13,7 @@ const getArray = () => {
 function App() {
   const [numbers, setNumbers] = useState(getArray())
 
-  const onEnd = () => {
+  const next = () => {
     setNumbers(numbers=>[...numbers, ...getArray()])
   }
 
@@ -21,13 +21,15 @@ function App() {
     <div className="App">
       <InfiniteScroll 
         className="scroll"
-        onEnd={onEnd} 
+        next={next}
         hasMore={true} 
+        loader = { <p> Loading... </p> }
+        end = {<p> You've reached the end </p>}
         margin={{
           top: '0px',
           left: '0px',
           right: '0px',
-          bottom: '0px'
+          bottom: '30%'
         }}
       >
         {

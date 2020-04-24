@@ -2,13 +2,15 @@ import React, { useCallback, useEffect, useRef } from "react";
 
 const InfiniteScroll = ({
   children,
-  onEnd,
+  next,
+  loader,
   hasMore,
+  end,
   margin = {
     top: '0px',
     left: '0px',
     right: '0px',
-    bottom: '0px'
+    bottom: '30%'
   },
   ...props
 }) => {
@@ -21,7 +23,7 @@ const InfiniteScroll = ({
           entries.forEach((entry) => {
             if (entry.isIntersecting && isRendered.current && hasMore) {
               console.log('Intersecting')
-              onEnd();
+              next();
             }
           });
         },
@@ -40,7 +42,7 @@ const InfiniteScroll = ({
     },
     // dependancy
     // eslint-disable-next-line
-    [isRendered, onEnd, intersectionDiv]
+    [isRendered, next, intersectionDiv]
   );
 
   useEffect(() => {
@@ -56,13 +58,16 @@ const InfiniteScroll = ({
   }, []);
 
   return (
-    <div {...props}>
-      {children}
+    <>
+      <div {...props}>
+        {children}
+      </div>
+      { hasMore?loader:end }
       <div
         ref={intersectionDiv}
         style={{ width: "100%", height: "2rem" }}
       ></div>
-    </div>
+    </>
   );
 };
 
