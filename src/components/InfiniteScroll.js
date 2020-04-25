@@ -6,6 +6,7 @@ const InfiniteScroll = ({
   loader,
   hasMore,
   end,
+  nextArgs,
   margin = {
     top: '0px',
     left: '0px',
@@ -22,7 +23,7 @@ const InfiniteScroll = ({
         (entries, observer) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting && isRendered.current && hasMore) {
-              next();
+              next(nextArgs);
             }
           });
         },
@@ -40,21 +41,21 @@ const InfiniteScroll = ({
       // end of useCallback
     },
     // dependancy
-    // eslint-disable-next-line
-    [isRendered, next, intersectionDiv]
+    [isRendered, next, intersectionDiv, nextArgs, hasMore, margin]
   );
 
   useEffect(() => {
     isRendered.current = true;
     const observer = memoizedCreateObserver();
     const intersectionDivCopy = intersectionDiv.current;
-    console.log(intersectionDiv.current)
+    
+    console.log('args:',nextArgs);
+
     return () => {
       observer.unobserve(intersectionDivCopy);
       isRendered.current = false;
     };
-    // eslint-disable-next-line
-  }, []);
+  }, [nextArgs, memoizedCreateObserver]);
 
   return (
     <>

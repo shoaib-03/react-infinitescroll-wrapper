@@ -16,13 +16,27 @@ A simple component to wrap around a div for which you want infinite scroll. This
   import InfiniteScroll from 'react-infinitescroll-wrapper'
 ```
 
-## Usage
+## Usage example
 ```
-function App() {
-  const [numbers, setNumbers] = useState(getArray())
+import React,{useState, useEffect} from 'react';
+import './App.css';
+import InfiniteScroll from './components/InfiniteScroll'
 
-  const next = () => {
-    setNumbers(numbers=>[...numbers, ...getArray()])
+const getArray = (n) => {
+  const arr = new Array(30);
+  for(let i=0; i<arr.length;i++){
+    arr[i] = n+i;
+  }
+  return arr;
+}
+
+function App() {
+  const [page, setPage] = useState(1)
+  const [numbers, setNumbers] = useState(getArray(0))
+
+  const next = (nextArgs) => {
+    setPage(page=>page+1)
+    setNumbers(numbers=>[...numbers, ...getArray(nextArgs.page*30)])
   }
 
   return (
@@ -33,6 +47,9 @@ function App() {
         hasMore={true} 
         loader = { <p> Loading... </p> }
         end = {<p> You've reached the end </p>}
+        nextArgs = {{
+          page : page
+        }}
         margin={{
           top: '0px',
           left: '0px',
@@ -47,4 +64,7 @@ function App() {
     </div>
   );
 }
+
+export default App;
+
 ```
