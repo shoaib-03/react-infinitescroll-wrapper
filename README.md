@@ -18,9 +18,9 @@ A simple component to wrap around a div for which you want infinite scroll. This
 
 ## Usage example
 ```
-import React,{useState, useEffect} from 'react';
+import React,{ useState } from 'react';
 import './App.css';
-import InfiniteScroll from './components/InfiniteScroll'
+import InfiniteScroll from 'react-infinitescroll-wrapper'
 
 const getArray = (n) => {
   const arr = new Array(30);
