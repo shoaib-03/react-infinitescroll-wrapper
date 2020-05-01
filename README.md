@@ -1,4 +1,7 @@
 # react-infinite-scroll
+[![npm version](https://badge.fury.io/js/react-infinitescroll-wrapper.svg)](https://badge.fury.io/js/react-infinitescroll-wrapper)
+![NPM](https://img.shields.io/npm/l/react-infinitescroll-wrapper)
+
 A simple component to wrap around a div for which you want infinite scroll. This uses IntersectionObserver API and is written with hooks
 
 ## Install
