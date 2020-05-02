@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef } from "react";
 
 const InfiniteScroll = ({
+  dataLength,
   children,
   next,
   loader,
@@ -22,7 +23,7 @@ const InfiniteScroll = ({
       const observer = new IntersectionObserver(
         (entries, observer) => {
           entries.forEach((entry) => {
-            if (entry.isIntersecting && isRendered.current && hasMore) {
+            if (entry.isIntersecting && isRendered.current && hasMore && dataLength) {
               next(nextArgs);
             }
           });
@@ -41,20 +42,20 @@ const InfiniteScroll = ({
       // end of useCallback
     },
     // dependancy
-    [isRendered, next, intersectionDiv, nextArgs, hasMore, margin]
+    [isRendered, next, intersectionDiv, nextArgs, hasMore, margin, dataLength]
   );
 
   useEffect(() => {
     isRendered.current = true;
     const observer = memoizedCreateObserver();
     const intersectionDivCopy = intersectionDiv.current;
-
+    console.log(dataLength)
 
     return () => {
       observer.unobserve(intersectionDivCopy);
       isRendered.current = false;
     };
-  }, [nextArgs, memoizedCreateObserver]);
+  }, [nextArgs, memoizedCreateObserver, dataLength]);
 
   return (
     <>

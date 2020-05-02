@@ -22,6 +22,7 @@ function App() {
   return (
     <div className="App">
       <InfiniteScroll
+        dataLength = {numbers.length}
         className="scroll"
         next={next}
         hasMore={true}
