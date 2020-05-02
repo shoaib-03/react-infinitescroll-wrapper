@@ -49,7 +49,6 @@ const InfiniteScroll = ({
     isRendered.current = true;
     const observer = memoizedCreateObserver();
     const intersectionDivCopy = intersectionDiv.current;
-    console.log(dataLength)
 
     return () => {
       observer.unobserve(intersectionDivCopy);
